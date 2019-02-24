@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+#
+*.xz
+bootcd.bin
+uboot.sh
+boot.iso
+images/
+tmp/
+troot/
+mnts/
+debs/

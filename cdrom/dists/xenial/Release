@@ -1,0 +1,61 @@
+Origin: Ubuntu
+Label: Ubuntu
+Suite: xenial
+Version: 16.04
+Codename: xenial
+Date: Thu, 21 Apr 2016 23:23:46 UTC
+Architectures: amd64 i386
+Components: main restricted
+Description: Ubuntu Xenial 16.04
+Acquire-By-Hash: yes
+MD5Sum:
+ e62ff0123a74adfc6903d59a449cbdb0       40 restricted/debian-installer/binary-amd64/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e        0 restricted/debian-installer/binary-amd64/Packages
+ be5a6215c8365ad6fcccfb5e5febdfa3      101 restricted/binary-i386/Release
+ 4a4dd3598707603b3f76a2378a4504aa       20 restricted/binary-i386/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e        0 restricted/binary-i386/Packages
+ ea93f2e671df19668c74e9b01defa440      102 restricted/binary-amd64/Release
+ e62ff0123a74adfc6903d59a449cbdb0       40 restricted/binary-amd64/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e        0 restricted/binary-amd64/Packages
+ d98802e63e5b4cef687621c33bb9a325    55057 main/debian-installer/binary-amd64/Packages.gz
+ 26efaab43b26701fb4706922581b9759   185444 main/debian-installer/binary-amd64/Packages
+ 4b055b3443971f13d049b8f474ad3af2       95 main/binary-i386/Release
+ 4a4dd3598707603b3f76a2378a4504aa       20 main/binary-i386/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e        0 main/binary-i386/Packages
+ 3da37ac4e874215ba57d3024828e50b4       96 main/binary-amd64/Release
+ 8e843655c22737c9a407c0c3fd153af5   527592 main/binary-amd64/Packages.gz
+ 350b6145d813a67a6f8b855b20ef4fcf  1772381 main/binary-amd64/Packages
+SHA1:
+ e3f4c61a216c2c9613cd3bdd1420dde095b296b3       40 restricted/debian-installer/binary-amd64/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709        0 restricted/debian-installer/binary-amd64/Packages
+ 941d15cd3f6550b713e7e32b6e8316e753dabe5a      101 restricted/binary-i386/Release
+ a0fddd5458378c1bf3c10dd2f5c060d1347741ed       20 restricted/binary-i386/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709        0 restricted/binary-i386/Packages
+ 7d122dff8e65481fd09c6814d5988cd5743b0d04      102 restricted/binary-amd64/Release
+ e3f4c61a216c2c9613cd3bdd1420dde095b296b3       40 restricted/binary-amd64/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709        0 restricted/binary-amd64/Packages
+ 801df05c475ec5f51d62919266e95bf050765fe1    55057 main/debian-installer/binary-amd64/Packages.gz
+ 52c0b59cd6d414ad9b9d8e72c3766da8720b84e6   185444 main/debian-installer/binary-amd64/Packages
+ 72839fbb199ce544157450b5bb05d49f8e54843a       95 main/binary-i386/Release
+ a0fddd5458378c1bf3c10dd2f5c060d1347741ed       20 main/binary-i386/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709        0 main/binary-i386/Packages
+ 87b7958096f8e5ef3f228f04c607fe3ffe085d31       96 main/binary-amd64/Release
+ 2440abed9ef7a79797c1d1c46867cd96953cf7e3   527592 main/binary-amd64/Packages.gz
+ 4f132525f537396f8163486f61c1ecdd1c1d3e96  1772381 main/binary-amd64/Packages
+SHA256:
+ e7ab72b8f37c7c9c9f6386fb8e3dfa40bf6fe4b67876703c5927e47cb8664ce4       40 restricted/debian-installer/binary-amd64/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 restricted/debian-installer/binary-amd64/Packages
+ 9c884e61862bff2f49669b42b182c09479e8e117fea930bea36dadfdb52a3e3e      101 restricted/binary-i386/Release
+ f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 restricted/binary-i386/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 restricted/binary-i386/Packages
+ ab8d8b20ea0a60634452c1c2ae8070eaae91a2e15815e6f581e5c98f7e2ea2d6      102 restricted/binary-amd64/Release
+ e7ab72b8f37c7c9c9f6386fb8e3dfa40bf6fe4b67876703c5927e47cb8664ce4       40 restricted/binary-amd64/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 restricted/binary-amd64/Packages
+ 8ab858d6c10139c3874bc9e0ec9fc2c61423b424fd9f99e400f91484367a646c    55057 main/debian-installer/binary-amd64/Packages.gz
+ b3c68000c8db3bdc3b281173da5ce6c849407a097b744c97482f23ebf4d53741   185444 main/debian-installer/binary-amd64/Packages
+ 464a48de412a1ac9dfb94c0aed99be3192cfb08c31793878abd9c12049fc4e13       95 main/binary-i386/Release
+ f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 main/binary-i386/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 main/binary-i386/Packages
+ e3059e32929c5d7ebe7bae3f8027d4eb459e5bd69a58c723198b1d461de5c313       96 main/binary-amd64/Release
+ 795c064854545e5bbe1e904ae6bbe455a7801cf415a969baeab8cb4743bf5810   527592 main/binary-amd64/Packages.gz
+ aa572bc7b30d4a494d80ece112a174d9c647545f7b48ed366fc8532b3712a7f4  1772381 main/binary-amd64/Packages

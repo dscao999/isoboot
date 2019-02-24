@@ -1,0 +1,24 @@
+Package: intel-e1000e
+Architecture: amd64
+Version: 3.4.2.1
+Priority: standard
+Section: kernel
+Origin: Ubuntu
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Alessio Treglia <alessio@debian.org>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 428
+Depends: linux-image-4.4.0-131-generic
+Suggests: 
+Breaks: 
+Filename: pool/contrib/i/intel-ethernet/intel-e1000e-3.4.2.1.deb
+Size: 96342
+MD5sum: 45136b64463804682998a804f64c2b3a
+SHA1: 4619982be5a02f6885a9fa38c63447ca6ffe39db
+SHA256: 6bf29e45260377e0bf2d170d91e8db2f7f10fb23c5148a104a795d0e96f9fce4
+SHA512: 49afbca460970acba5377f7760d25e0292b7eabc971917e5074fc820116351bae693c95c37608d01d10c3b15a3e70f269287274269f3b8e3547f811372d87f70
+Homepage: http://www.intel.com/
+Description: Intel Gigabit Ethernet Driver
+Task: standard
+Supported: 5y
+

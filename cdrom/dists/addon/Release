@@ -1,0 +1,16 @@
+Origin: Ubuntu
+Label: Ubuntu
+Suite: addon
+Version: 16.04
+Codename: addon
+Date: Thu, 21 Apr 2016 23:23:46 UTC
+Architectures: amd64
+Components: contrib
+Description: Ubuntu Xenial 16.04
+Acquire-By-Hash: yes
+MD5Sum:
+ fcdfce69fee0de690494ba648df9c8f8   845 contrib/binary-amd64/Packages
+SHA1:
+ 988646a66e240afcda8c1281eebe89e3bf990bfb   845 contrib/binary-amd64/Packages
+SHA256:
+ 1969836d3282349d37c1d4eabf8876f9d0a047bbc7141241c09e31cba2dca4e2   845 contrib/binary-amd64/Packages
