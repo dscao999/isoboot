@@ -86,9 +86,24 @@ static int get_bootvol(FILE *iso, struct bootvol *bv)
 	return catoff;
 }
 
+static int get_boot_section(FILE *iso, struct bootentry *entry, int nument)
+{
+	int i, bcount;
+
+	bcount = 0;
+	for (i = 0; i < nument; i++) {
+		fread(entry, sizeof(struct bootentry), 1, iso);
+		if (entry->mtype != 0 || entry->bid != 0x88)
+			continue;
+		entry++;
+		bcount++;
+	}
+	return bcount;
+}
+
 static int get_bootentry(FILE *iso, struct bootentry *bent, u32 catoff)
 {
-	int bcount;
+	int bcount, nument, last;
 	struct bootentry *entry = bent;
 
 	bcount = 0;
@@ -96,11 +111,23 @@ static int get_bootentry(FILE *iso, struct bootentry *bent, u32 catoff)
 		fread(entry, sizeof(struct bootentry), 1, iso);
 		if (entry->bid != 0x88)
 			break;
-		printf("Boot Image. Emulation: %d, Load Seg: %d, Start: %d, Size: %d, Sys Type: %d\n",
-				entry->mtype & 7, entry->lseg, entry->start*4, entry->v_count, entry->stype);
+		if (entry->mtype != 0)
+			continue;
 		bcount++;
 		entry++;
 	} while (bcount < 4);
+	if (entry->bid == 0x90 || entry->bid == 0x91) {
+		last =	(entry->bid == 0x91)? 1 : 0;
+		do {
+			nument = get_boot_section(iso, entry, entry->lseg);
+			bcount += nument;
+			entry += nument;
+			if (last == 1)
+				break;
+			fread(entry, sizeof(struct bootentry), 1, iso);
+			last =	(entry->bid == 0x91)? 1 : 0;
+		} while (1);
+	}
 
 	return bcount;
 }
@@ -117,8 +144,39 @@ int main(int argc, char *argv[])
 	u32 catoff;
 	int nument, retv = 0, i;
 	struct stat *isostat;
+	const char *uimage;
+	extern char *optarg;
+	extern int optind, opterr, optopt;
+	int c, fin;
 
-	iso = fopen(argv[1], "rb");
+	opterr = 0;
+	uimage = NULL;
+	fin = 0;
+	do {
+		c = getopt(argc, argv, ":o:");
+		switch(c) {
+		case -1:
+			fin = 1;
+			break;
+		case '?':
+			fprintf(stderr, "Unknown option: %c\n", (char)optopt);
+			break;
+		case ':':
+			fprintf(stderr, "Missiong argument for option: %c\n",
+					(char)optopt);
+			break;
+		case 'o':
+			uimage = optarg;
+			break;
+		}
+	} while (fin == 0);
+
+	if (optind == argc) {
+		fprintf(stderr, "Usage: %s [-o uimage] isoimage\n", argv[0]);
+		return 104;
+	}
+
+	iso = fopen(argv[optind], "rb");
 	if (!iso) {
 		fprintf(stderr, "Cannot open the given iso file: %s\n", argv[1]);
 		return 4;
@@ -152,7 +210,8 @@ int main(int argc, char *argv[])
 		mbrsec_add_image(mbr, bent->start*4, bent->v_count, secbuf);
 	}
 
-	iso2udisk(iso, mbr, "udisk.img");
+	if (uimage)
+		iso2udisk(iso, mbr, uimage);
 
 exit_10:
 	free(buf);
@@ -165,6 +224,10 @@ static void iso2udisk(FILE *iso, struct mbrsec *mbr, const char *uimg)
 	FILE *uf;
 
 	uf = fopen(uimg, "wb");
+	if (!uf) {
+		fprintf(stderr, "Cannot open file %s for write.\n", uimg);
+		return;
+	}
 	fwrite(mbr, sizeof(struct mbrsec), 1, uf);
 	fseek(iso, V_SECSIZE, SEEK_SET);
 	fread(mbr, V_SECSIZE, 1, iso);
