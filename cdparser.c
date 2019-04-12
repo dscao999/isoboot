@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
 	buf = malloc(SECSIZE);
 	bvol = (struct bootvol *)buf;
 	catoff = get_bootvol(iso, bvol);
-	if ((int) catoff == -1) {
+	if ((int)catoff == -1) {
 		fprintf(stderr, "Not a bootable iso!\n");
 		retv = 8;
 		goto exit_10;
